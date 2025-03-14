@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Player_ItemPickier : MonoBehaviour
+public class Player_ItemPicker : MonoBehaviour
 {
     [SerializeField] private PlayerManager_Inventory playerInventory;
     [SerializeField] private float pickupRange;

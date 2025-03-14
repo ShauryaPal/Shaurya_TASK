@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Wine
   itemSprite: {fileID: 21300176, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
   itemDescription: Enjoy this in your leasuire time
+  equippablePrefab: {fileID: 1501158314207674076, guid: 7943f39a850a84400bc058c99f9a3ec3, type: 3}

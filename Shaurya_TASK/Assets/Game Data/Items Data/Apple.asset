@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Apple
   itemSprite: {fileID: 21300178, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
   itemDescription: You can eat this
+  equippablePrefab: {fileID: 342390614880252929, guid: e99bb1db9683744eda6a57ceb6e984b0, type: 3}

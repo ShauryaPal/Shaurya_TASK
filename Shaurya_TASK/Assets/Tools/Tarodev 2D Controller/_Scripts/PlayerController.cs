@@ -14,6 +14,7 @@ namespace TarodevController
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         [SerializeField] private ScriptableStats _stats;
+        [SerializeField] private PlayerAnimator _animator;
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
         private FrameInput _frameInput;
@@ -68,12 +69,18 @@ namespace TarodevController
 
         private void FixedUpdate()
         {
-            CheckCollisions();
+            if (!_animator.isPlayingUnskippableAnimation)
+            {
+                CheckCollisions();
 
-            HandleJump();
-            HandleDirection();
+                HandleJump();
+                HandleDirection();
+            }
+            else
+            {
+                _frameVelocity.x = 0;
+            }
             HandleGravity();
-            
             ApplyMovement();
         }
 

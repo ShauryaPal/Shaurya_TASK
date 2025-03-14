@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace TarodevController
 {
@@ -31,6 +34,7 @@ namespace TarodevController
         private bool _grounded;
         private ParticleSystem.MinMaxGradient _currentGradient;
         private float _animatedBodyOriginalXScale;
+        internal bool isPlayingUnskippableAnimation = false;
 
         private void Awake()
         {
@@ -57,7 +61,7 @@ namespace TarodevController
 
         private void Update()
         {
-            if (_player == null) return;
+            if (_player == null || isPlayingUnskippableAnimation) return;
 
             DetectGroundColor();
 
@@ -76,7 +80,9 @@ namespace TarodevController
         private void HandleIdleSpeed()
         {
             var inputStrength = Mathf.Abs(_player.FrameInput.x);
-            _animator.Play(inputStrength > 0 ? WalkKey : IdleKey);
+            
+            if(_grounded)
+                _animator.Play(inputStrength > 0 ? WalkKey : IdleKey);
             // _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, inputStrength));
             
             _moveParticles.transform.localScale = Vector3.MoveTowards(_moveParticles.transform.localScale, Vector3.one * inputStrength, 2 * Time.deltaTime);
@@ -122,6 +128,7 @@ namespace TarodevController
             }
             else
             {
+                _animator.Play(JumpKey);
                 _moveParticles.Stop();
             }
         }
@@ -142,9 +149,30 @@ namespace TarodevController
             main.startColor = _currentGradient;
         }
 
+        public void PlayUnskippableAnimation(int animation, Action callback)
+        {
+            isPlayingUnskippableAnimation = true;
+            StartCoroutine(Coroutine_PlayUnskippableAnimation(animation, callback));
+        }
+
+        IEnumerator Coroutine_PlayUnskippableAnimation(int animation, Action callback)
+        {
+            _animator.Play(animation);
+
+            yield return new WaitForSeconds(0.1f);
+            
+            while (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1 || _animator.IsInTransition(0))
+                yield return null;
+
+            isPlayingUnskippableAnimation = false;
+            callback?.Invoke();
+        }
+
         // private static readonly int GroundedKey = Animator.StringToHash("Grounded");
         private static readonly int IdleKey = Animator.StringToHash("Idle");
         private static readonly int WalkKey = Animator.StringToHash("Walk");
         private static readonly int JumpKey = Animator.StringToHash("Jump");
+        public static readonly int EatKey = Animator.StringToHash("Eat");
+        public static readonly int AttackKey = Animator.StringToHash("Attack");
     }
 }
