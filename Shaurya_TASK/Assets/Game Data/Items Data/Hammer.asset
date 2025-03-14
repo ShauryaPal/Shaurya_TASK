@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Hammer
   itemSprite: {fileID: -1704266929, guid: 1e18bf4e9066748ee8c11fc3fd7ef274, type: 3}
   itemDescription: Use this to break hard items!
+  equippablePrefab: {fileID: -6647354105173151578, guid: f301b9813d0714d228aa34e6012cee91, type: 3}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   itemName: Rock
-  itemSprite: {fileID: 21300134, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
+  itemSprite: {fileID: 21300000, guid: 8085862508ddc4683a03778dd7053490, type: 3}
   itemDescription: You can throw this item
+  equippablePrefab: {fileID: 2190606734747449973, guid: ae9157dedf0104d3c805b70222dba543, type: 3}

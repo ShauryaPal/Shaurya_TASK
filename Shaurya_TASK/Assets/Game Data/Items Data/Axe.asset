@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Axe
   itemSprite: {fileID: -568353256, guid: 1e18bf4e9066748ee8c11fc3fd7ef274, type: 3}
   itemDescription: Use this to chop trees
+  equippablePrefab: {fileID: -6647354105173151578, guid: a0dbe4ad9ca91449eadcea82b7c6e95b, type: 3}

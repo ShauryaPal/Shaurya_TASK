@@ -20,6 +20,8 @@ public class PlayerManager_ItemInteracter : MonoBehaviour
 
     private void InventoryOnItemDepleted(ItemData item)
     {
+        if(equippedItemData == null || equippedItemData.itemData.itemData == null) return;
+        
         if (item.itemData == equippedItemData.itemData.itemData)
             UnequipItem();
     }

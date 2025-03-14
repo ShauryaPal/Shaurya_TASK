@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6611566347170051002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.054, z: 0}
+  m_LocalPosition: {x: 0.236, y: 0.037, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5825387008391978187}
   - component: {fileID: -6647354105173151578}
   m_Layer: 0
-  m_Name: Equipped Axe
+  m_Name: Equipped Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -568353256, guid: 1e18bf4e9066748ee8c11fc3fd7ef274, type: 3}
+  m_Sprite: {fileID: -1704266929, guid: 1e18bf4e9066748ee8c11fc3fd7ef274, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,10 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8763b5c6b2a81466cbf28774c1e68683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  validResourceTypes: 01000000
+  validResourceTypes: 00000000
   attackPoint: {fileID: 4086696984250370501}
-  attackRadius: 0.53
-  damage: 26
+  attackRadius: 0.56
+  damage: 20
   resourcesPropLayer:
     serializedVersion: 2
     m_Bits: 256

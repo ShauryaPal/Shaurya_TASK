@@ -1,8 +1,10 @@
+using System.Linq;
 using TarodevController;
 using UnityEngine;
 
-public class EquippedItem_Axe : EquippedItem
+public class EquippedItem_Tool : EquippedItem
 {
+    [SerializeField] private ResourceType[] validResourceTypes;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius;
     [SerializeField] private int damage;
@@ -18,7 +20,8 @@ public class EquippedItem_Axe : EquippedItem
         var resources = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, resourcesPropLayer);
 
         if (resources.Length > 0 && resources[0].TryGetComponent(out Prop_Resource resource))
-            resource.Damage(damage);
+            if(validResourceTypes.Contains(resource.resourceType))
+                resource.Damage(damage);
     }
 
     private void OnDrawGizmosSelected()

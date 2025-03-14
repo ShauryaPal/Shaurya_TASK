@@ -21,7 +21,7 @@ public class Prop_Lever : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Throwable") && timeToWaitBeforeChangingLeverAgain <= 0)
+        if (timeToWaitBeforeChangingLeverAgain <= 0)
         {
             leverAnimator.Play(isLeft ? PullRightKey : PullLeftKey);
             isLeft = !isLeft;
