@@ -15,7 +15,7 @@ public class Inventory_Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private TMP_Text itemQuantityTxt;
     [SerializeField] private GameObject dropButton;
 
-    private ItemData itemData => new() { itemData = assignedItem, quantity = quantity};
+    internal ItemData itemData => new() { itemData = assignedItem, quantity = quantity};
     internal Scriptable_Item assignedItem { get; private set; }
     internal bool haveItem;
     private int quantity;

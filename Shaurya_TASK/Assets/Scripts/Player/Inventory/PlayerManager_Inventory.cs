@@ -5,7 +5,20 @@ using System.Linq;
 public class PlayerManager_Inventory : MonoBehaviour
 {
     public event Action<ItemData> OnItemDepleted;
-    [SerializeField] Inventory_Slot[] inventorySlots;
+    [SerializeField] private Inventory_Slot[] inventorySlots;
+
+    public bool HaveItem(Scriptable_Item checkItem, out Inventory_Slot itemSlot)
+    {
+        foreach (var slot in inventorySlots)
+            if (slot.haveItem && slot.assignedItem == checkItem)
+            {
+                itemSlot = slot;
+                return true;
+            }
+
+        itemSlot = null;
+        return false;
+    }
 
     public void OnItemDepletedFromInventory(ItemData itemData)
     {
@@ -38,5 +51,22 @@ public class PlayerManager_Inventory : MonoBehaviour
         }
         
         item.OnItemPickedUp();
+    }
+    
+    public void AddItemToInventory(ItemData itemData)
+    {
+        var itemAlreadyInInventory = inventorySlots.Any(i => i.assignedItem == itemData.itemData);
+
+        if (itemAlreadyInInventory)
+        {
+            inventorySlots.First(i => i.assignedItem == itemData.itemData).UpdateItemQuantity(itemData.quantity);
+        }
+        else
+        {
+            var freeSpaceAvailableInInventory = inventorySlots.Any(i => !i.haveItem);
+
+            if (freeSpaceAvailableInInventory)
+                inventorySlots.First(i => !i.haveItem).AssignItem(itemData);
+        }
     }
 }

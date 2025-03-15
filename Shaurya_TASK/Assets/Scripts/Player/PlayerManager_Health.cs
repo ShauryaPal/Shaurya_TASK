@@ -10,6 +10,12 @@ public class PlayerManager_Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    public void HealPlayer(int healAmount)
+    {
+        currentHealth += healAmount;
+        PlayerReferences.Instance.ui.UpdateHealthBar(currentHealth/(float)maxHealth);
+    }
+
     public void DamagePlayer(int damage)
     {
         currentHealth -= damage;

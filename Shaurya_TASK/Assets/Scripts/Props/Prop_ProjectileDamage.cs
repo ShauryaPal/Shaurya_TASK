@@ -1,14 +1,18 @@
 using System;
 using UnityEngine;
 
-public class Prop_SpikeBall : MonoBehaviour
+public class Prop_ProjectileDamage : MonoBehaviour
 {
     [SerializeField] private int damage;
+    [SerializeField] private float timeToDestroy = 10;
+    [SerializeField] private bool destroyAfterFewSeconds;
+    
     private float timeToWaitBeforeDoingDmg;
     
     private void Start()
     {
-        Destroy(gameObject, 10);
+        if(destroyAfterFewSeconds)
+            Destroy(gameObject, timeToDestroy);
     }
 
     private void Update()

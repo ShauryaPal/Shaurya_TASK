@@ -8,7 +8,7 @@ public class Prop_Chest : Prop_Interactable
     [SerializeField] private Vector2 minMaxYOffsetForDrops;
     
     private const string OpenChestKey = "OpenChest";
-    private bool opened = false;
+    private bool opened;
     
     public override void Use()
     {

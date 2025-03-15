@@ -7,6 +7,7 @@ public class DataReferences : MonoBehaviour
 
     public Transform playerTransform;
     public Dropped_Item droppedItemPrefab;
+    public Prop_Stall_UIManager propStallUIManager;
     
     private void Awake()
     {

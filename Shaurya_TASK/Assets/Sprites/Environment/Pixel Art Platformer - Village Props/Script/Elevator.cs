@@ -63,7 +63,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         private float targetLength;
         private SecondOrderDynamics secondOrderDynamics = new SecondOrderDynamics(4.0f, 0.3f, -0.3f);
         private bool canMove = false;
-
+        
         private void Start()
         {
             curState = startState;
@@ -92,7 +92,6 @@ namespace Cainos.PixelArtPlatformer_VillageProps
                     {
                         curState = State.Down;
                         IsWaiting = true;
-                        canMove = false;
                     }
                 }
                 else if (curState == State.Down)

@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class Prop_Spike : MonoBehaviour
+public class Prop_AreaDamage : MonoBehaviour
 {
     [SerializeField] private int damagePerSecond;
     [SerializeField] private Vector2 damageHitboxSize;

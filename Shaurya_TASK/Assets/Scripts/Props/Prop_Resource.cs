@@ -29,5 +29,8 @@ public class Prop_Resource : MonoBehaviour
 public enum ResourceType
 {
     Rock,
-    Tree
+    Tree,
+    Boxes,
+    Pots,
+    Wheat
 }

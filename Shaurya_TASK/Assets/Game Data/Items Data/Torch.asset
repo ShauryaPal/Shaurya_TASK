@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Torch
   itemSprite: {fileID: 21300022, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
   itemDescription: Portable Light Source
+  equippablePrefab: {fileID: 5904554234725011459, guid: 58f425985a8f34016ae58ebd1be2c7a0, type: 3}
