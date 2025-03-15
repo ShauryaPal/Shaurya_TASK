@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 380959569462227154}
   m_Layer: 8
   m_Name: Pot
-  m_TagString: Untagged
+  m_TagString: Resource Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5439062169478013487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.80184, y: 9.069384, z: 5.7270007}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,9 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e94d69b72a794c029fca997940625f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceType: 3
+  resourceType: 4
   health: 20
   itemsToDrop:
   - {fileID: 11400000, guid: 3d5de842d21f6449e9c1f1dd8da9533f, type: 2}
   minMaxXOffsetForDrops: {x: -1, y: 1}
   minMaxYOffsetForDrops: {x: -0.5, y: 0.5}
+  spriteRenderer: {fileID: 0}
+  polygonCollider2D: {fileID: 0}

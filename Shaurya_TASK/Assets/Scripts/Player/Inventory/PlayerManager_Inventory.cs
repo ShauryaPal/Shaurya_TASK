@@ -5,7 +5,7 @@ using System.Linq;
 public class PlayerManager_Inventory : MonoBehaviour
 {
     public event Action<ItemData> OnItemDepleted;
-    [SerializeField] private Inventory_Slot[] inventorySlots;
+    public Inventory_Slot[] inventorySlots;
 
     public bool HaveItem(Scriptable_Item checkItem, out Inventory_Slot itemSlot)
     {
@@ -69,4 +69,19 @@ public class PlayerManager_Inventory : MonoBehaviour
                 inventorySlots.First(i => !i.haveItem).AssignItem(itemData);
         }
     }
+
+    public void LoadSavedData(SaveData_PlayerInventory[] savedData)
+    {
+        for (var i = 0; i < savedData.Length; i++)
+        {
+            var item = savedData[i];
+            var slot = inventorySlots[i];
+
+            if (item.scriptableItemIndex != -1)
+                slot.AssignItem(new ItemData(){itemData = DataReferences.Instance.GetScriptableItemFromIndex(item.scriptableItemIndex), quantity = item.itemQuantity});
+            else
+                slot.ResetSlot();
+        }
+    }
+    
 }

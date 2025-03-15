@@ -19,7 +19,7 @@ public class PlayerManager_PropInteracter : MonoBehaviour
         if (!Input.GetKeyDown(propInteractKey)) return;
         
         if (results[0].TryGetComponent(out Prop_Interactable prop))
-            prop.Use();
+            prop.Interact();
     }
 
     private void OnDrawGizmosSelected()

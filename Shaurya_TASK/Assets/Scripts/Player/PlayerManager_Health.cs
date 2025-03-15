@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerManager_Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    private int currentHealth;
+    internal int currentHealth { get; set; }
 
     private void Start()
     {
@@ -25,5 +25,11 @@ public class PlayerManager_Health : MonoBehaviour
         {
             //TODO - Die
         }
+    }
+
+    public void LoadSavedData(int health)
+    {
+        currentHealth = health;
+        PlayerReferences.Instance.ui.UpdateHealthBar(currentHealth/(float)maxHealth, false);
     }
 }

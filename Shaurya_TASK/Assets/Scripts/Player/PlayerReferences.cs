@@ -5,6 +5,7 @@ public class PlayerReferences : MonoBehaviour
 {
     public static PlayerReferences Instance;
 
+    public Transform playerTransform;
     public PlayerAnimator animator;
     public PlayerManager_Inventory inventory;
     public PlayerManager_UI ui;

@@ -7,19 +7,23 @@ public class Prop_Chest : Prop_Interactable
     [SerializeField] private Vector2 minMaxXOffsetForDrops;
     [SerializeField] private Vector2 minMaxYOffsetForDrops;
     
+    private const string IdleChestKey = "IdleChest";
     private const string OpenChestKey = "OpenChest";
-    private bool opened;
+    private const string OpenedChestKey = "OpenedChest";
     
-    public override void Use()
+    protected override void Use()
     {
-        if (opened) return;
-        opened = true;
-        
+        base.Use();
         animator.Play(OpenChestKey);
         Invoke(nameof(DropLoot), 1f);
-        
     }
 
+    protected override void OnLoadSavedData(bool _interacted)
+    {
+        base.OnLoadSavedData(_interacted);
+        animator.Play(_interacted ? OpenedChestKey : IdleChestKey);
+    }
+    
     private void DropLoot()
     {
         foreach (var item in rewardItems)
@@ -28,4 +32,6 @@ public class Prop_Chest : Prop_Interactable
             droppedItem.SetupDroppedItem(new ItemData {itemData = item, quantity = 1});
         }
     }
+
+    
 }

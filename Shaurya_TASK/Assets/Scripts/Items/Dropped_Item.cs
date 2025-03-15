@@ -1,11 +1,11 @@
-using System;
 using UnityEngine;
 
 public class Dropped_Item : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Scriptable_Item _itemData;
-    [SerializeField] private int quantity;
+    
+    internal Scriptable_Item itemData { get; private set; }
+    internal int quantity { get; private set; }
 
     private Vector3 originalPosition;
     private Vector3 tempPosition;
@@ -20,29 +20,29 @@ public class Dropped_Item : MonoBehaviour
         AnimateDroppedItem();
     }
 
-    public void SetupDroppedItem(ItemData itemData)
+    public void SetupDroppedItem(ItemData data)
     {
-        _itemData = itemData.itemData;
-        spriteRenderer.sprite = itemData.itemData.itemSprite;
-        quantity = itemData.quantity;
+        itemData = data.itemData;
+        spriteRenderer.sprite = data.itemData.itemSprite;
+        quantity = data.quantity;
     }
 
     public ItemData GetItemData()
     {
-        ItemData itemData = new()
+        ItemData data = new()
         {
-            itemData = _itemData,
+            itemData = itemData,
             quantity = quantity
         };
         
-        return itemData;
+        return data;
     }
 
     public void OnItemPickedUp()
     {
         Destroy(gameObject);
     }
-
+    
     #region  Dropped Item Animation
 
     private void AnimateDroppedItem()

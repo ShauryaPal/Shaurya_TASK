@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4848256740246666799}
   - component: {fileID: 8914462072408480428}
-  - component: {fileID: 2697540938911641461}
+  - component: {fileID: -6900546838416075594}
   - component: {fileID: 6440045314311855722}
   - component: {fileID: 7599192546212382279}
   m_Layer: 8
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: Resource Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4266540193157282848}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.784063, y: 8.135909, z: 5.7270007}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,8 +87,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2697540938911641461
-BoxCollider2D:
+--- !u!60 &-6900546838416075594
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015403271, y: 0.013435662}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4888889, y: 0.4888889}
@@ -129,9 +129,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3508863, y: 1.3468496}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.6875, y: 0.71875}
+      - {x: -0.6875, y: -0.6875}
+      - {x: 0.71875, y: -0.6875}
+      - {x: 0.71875, y: 0.71875}
+  m_UseDelaunayMesh: 0
 --- !u!50 &6440045314311855722
 Rigidbody2D:
   serializedVersion: 4
@@ -178,3 +182,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf8118269ddac4cda9786aab2fe5db16, type: 2}
   minMaxXOffsetForDrops: {x: -1, y: 1}
   minMaxYOffsetForDrops: {x: -0.5, y: 0.5}
+  spriteRenderer: {fileID: 0}
+  polygonCollider2D: {fileID: 0}

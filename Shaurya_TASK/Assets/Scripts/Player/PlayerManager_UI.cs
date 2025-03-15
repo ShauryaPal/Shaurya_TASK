@@ -35,8 +35,11 @@ public class PlayerManager_UI : MonoBehaviour
         inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
-    public void UpdateHealthBar(float value)
+    public void UpdateHealthBar(float value, bool animate = true)
     {
-        healthFillBar.DOFillAmount(value, healthBarFillSpeed);
+        if(animate)
+            healthFillBar.DOFillAmount(value, healthBarFillSpeed);
+        else
+            healthFillBar.fillAmount = value;
     }
 }

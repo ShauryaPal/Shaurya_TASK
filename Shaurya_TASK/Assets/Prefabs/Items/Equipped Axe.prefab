@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8763b5c6b2a81466cbf28774c1e68683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  validResourceTypes: 010000000200000004000000
+  validResourceTypes: 01000000030000000500000006000000
   attackPoint: {fileID: 4086696984250370501}
   attackRadius: 0.53
   damage: 26

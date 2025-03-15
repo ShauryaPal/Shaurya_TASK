@@ -6,7 +6,7 @@ public class Prop_Stall : Prop_Interactable
     [SerializeField] private GameObject stallUIMenu;
     [SerializeField] private Prop_Stall_Items[] stallItems;
     
-    public override void Use()
+    protected override void Use()
     {
         DataReferences.Instance.propStallUIManager.SetupStallUI(stallItems);
         stallUIMenu.SetActive(!stallUIMenu.activeSelf);    

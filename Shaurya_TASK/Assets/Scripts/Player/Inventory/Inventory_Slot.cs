@@ -17,8 +17,8 @@ public class Inventory_Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     internal ItemData itemData => new() { itemData = assignedItem, quantity = quantity};
     internal Scriptable_Item assignedItem { get; private set; }
-    internal bool haveItem;
-    private int quantity;
+    internal bool haveItem { get; private set; }
+    internal int quantity { get; private set; }
 
     #region Inventory Slot Updation
     
@@ -45,7 +45,7 @@ public class Inventory_Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             ResetSlot();
     }
     
-    private void ResetSlot()
+    public void ResetSlot()
     {
         PlayerReferences.Instance.inventory.OnItemDepletedFromInventory(itemData);
         

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6375024953812998899}
   - component: {fileID: 3369819242535647095}
   - component: {fileID: 7731403144774355314}
-  - component: {fileID: 5405776015707505920}
   - component: {fileID: 1661284203158263174}
   m_Layer: 8
   m_Name: Campfire
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2067039760102975544}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.99302, y: -7.032867, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -109,25 +108,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   damageSmoothingRate: 50
---- !u!114 &5405776015707505920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067039760102975544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e94d69b72a794c029fca997940625f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resourceType: 0
-  health: 50
-  itemsToDrop:
-  - {fileID: 11400000, guid: cd3954757b38245c49d18c61f367a629, type: 2}
-  - {fileID: 11400000, guid: 3d5de842d21f6449e9c1f1dd8da9533f, type: 2}
-  minMaxXOffsetForDrops: {x: 0, y: 0.5}
-  minMaxYOffsetForDrops: {x: 0, y: 0.2}
 --- !u!61 &1661284203158263174
 BoxCollider2D:
   m_ObjectHideFlags: 0

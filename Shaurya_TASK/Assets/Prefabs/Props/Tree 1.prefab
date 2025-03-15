@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1190888413894798571}
   m_Layer: 8
   m_Name: Tree 1
-  m_TagString: Untagged
+  m_TagString: Resource Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6596143553625478420}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.97, y: 2.35, z: 5.7270007}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -185,3 +185,5 @@ MonoBehaviour:
   itemsToDrop: []
   minMaxXOffsetForDrops: {x: 0, y: 0}
   minMaxYOffsetForDrops: {x: 0.5, y: 0.8}
+  spriteRenderer: {fileID: 0}
+  polygonCollider2D: {fileID: 0}
