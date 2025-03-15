@@ -87,6 +87,11 @@ public class Inventory_Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     #region Handling Dragging And Info Box
 
+    private void OnDisable()
+    {
+        itemInfoPanel.SetActive(false);
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(haveItem)

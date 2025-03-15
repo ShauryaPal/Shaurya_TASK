@@ -1,26 +1,25 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveLoadManager_Game : MonoBehaviour
 {
+    public static SaveLoadManager_Game instance;
+    
     [SerializeField] private SaveLoadManager_Player player;
     [SerializeField] private SaveLoadManager_DroppedItems droppedItems;
     [SerializeField] private SaveLoadManager_Prop_Interactable propInteractable;
     [SerializeField] private SaveLoadManager_Prop_Resources resources;
 
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            SaveGame();
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            LoadGame();
-        }
+        instance = this;
     }
 
+    public void DeleteSaveData()
+    {
+        SerializationManager.DeleteAllSaveData();
+    }
 
     public void SaveGame()
     {
@@ -32,9 +31,18 @@ public class SaveLoadManager_Game : MonoBehaviour
 
     public void LoadGame()
     {
-        player.LoadPlayerData();
-        droppedItems.LoadDroppedItemsData();
-        propInteractable.LoadInteractablePropsData();
-        resources.LoadResourceProps();
+        try
+        {
+            player.LoadPlayerData();
+            droppedItems.LoadDroppedItemsData();
+            propInteractable.LoadInteractablePropsData();
+            resources.LoadResourceProps();
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Unable To Load Game" + e.Message);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        }
     }
 }

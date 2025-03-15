@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Prop_Statue : Prop_Interactable
@@ -13,6 +14,8 @@ public class Prop_Statue : Prop_Interactable
     protected override void Use()
     {
         if (!PlayerReferences.Instance.inventory.HaveItem(flowersItem, out var slot)) return;
+        if (PlayerReferences.Instance.itemInteracter.equippedItemData != null && PlayerReferences.Instance.itemInteracter.equippedItemData.itemData.itemData != flowersItem) return;
+
         base.Use();
         slot.UpdateItemQuantity(-1);
         animator.Play(ActivateStatueKey);

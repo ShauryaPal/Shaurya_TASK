@@ -14,12 +14,23 @@ public class PlayerManager_PropInteracter : MonoBehaviour
     private void CheckForDroppedItems()
     {
         var results = Physics2D.OverlapCircleAll(transform.position, interactRange, propItemLayer);
-        
+
         if (results.Length <= 0) return;
-        if (!Input.GetKeyDown(propInteractKey)) return;
-        
-        if (results[0].TryGetComponent(out Prop_Interactable prop))
-            prop.Interact();
+
+        foreach (var item in results)
+        {
+            foreach (var prop in item.GetComponents<Prop_Interactable>())
+            {
+                if (!prop.interacted)
+                {
+                    if (Input.GetKeyDown(propInteractKey))
+                    {
+                        prop.Interact();
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()

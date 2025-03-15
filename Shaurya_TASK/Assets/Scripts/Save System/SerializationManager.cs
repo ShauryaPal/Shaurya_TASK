@@ -79,4 +79,12 @@ public static class SerializationManager
     
     #endregion
 
+    public static void DeleteAllSaveData()
+    {
+        if (File.Exists(playerSaveDataFileName)) File.Delete(playerSaveDataFileName);
+        if (File.Exists(droppedItemsSaveDataFileName)) File.Delete(droppedItemsSaveDataFileName);
+        if (File.Exists(interactablePropsSaveDataFileName)) File.Delete(interactablePropsSaveDataFileName);
+        if (File.Exists(resourcePropsSaveDataFileName)) File.Delete(resourcePropsSaveDataFileName);
+    }
+    
 }

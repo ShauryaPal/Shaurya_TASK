@@ -4,6 +4,7 @@ using System.Linq;
 
 public class PlayerManager_Inventory : MonoBehaviour
 {
+    public event Action OnItemAdded;
     public event Action<ItemData> OnItemDepleted;
     public Inventory_Slot[] inventorySlots;
 
@@ -34,6 +35,7 @@ public class PlayerManager_Inventory : MonoBehaviour
 
     public void AddItemToInventory(Dropped_Item item)
     {
+        OnItemAdded?.Invoke();
         var itemData = item.GetItemData();
         
         var itemAlreadyInInventory = inventorySlots.Any(i => i.assignedItem == itemData.itemData);

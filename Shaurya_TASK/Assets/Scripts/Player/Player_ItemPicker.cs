@@ -18,12 +18,10 @@ public class Player_ItemPicker : MonoBehaviour
         var results = Physics2D.OverlapCircleAll(transform.position, pickupRange, droppedItemLayer);
         
         if (results.Length <= 0) return;
-        if (!Input.GetKeyDown(droppedItemPickupKey)) return;
         
-        if (results[0].TryGetComponent(out Dropped_Item droppedItem))
-        {
-            playerInventory.AddItemToInventory(droppedItem);
-        }
+        if (Input.GetKeyDown(droppedItemPickupKey))
+            if (results[0].TryGetComponent(out Dropped_Item droppedItem))
+                playerInventory.AddItemToInventory(droppedItem);
     }
 
     private void OnDrawGizmosSelected()

@@ -97,4 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79f85ca626034af5a845e8f3a0669fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 6dbbc035ae0384f149bb49afccdb2bf2, type: 3}
   healAmount: 24

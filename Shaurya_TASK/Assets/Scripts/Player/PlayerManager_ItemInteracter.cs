@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerManager_ItemInteracter : MonoBehaviour
 {
     [SerializeField] private Transform playerEquippedItemHolderTransform;
-    private EquippedItem equippedItemData;
+    internal EquippedItem equippedItemData;
 
     private void Start()
     {
@@ -28,6 +28,8 @@ public class PlayerManager_ItemInteracter : MonoBehaviour
 
     public void SelectItem(ItemData itemData)
     {
+        if(itemData.itemData== null) return;
+        
         if (playerEquippedItemHolderTransform.childCount > 0)
             foreach (Transform child in playerEquippedItemHolderTransform)
                 Destroy(child.gameObject);

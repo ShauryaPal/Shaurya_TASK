@@ -10,6 +10,7 @@ public class EquippedItem_Apple : EquippedItem
         base.Use();
         PlayerReferences.Instance.animator.PlayUnskippableAnimation(PlayerAnimator.EatKey, () =>
         {
+            SaveLoadManager_Game.instance.SaveGame();
             PlayerReferences.Instance.health.HealPlayer(healAmount);
             PlayerReferences.Instance.inventory.OnItemUsedFromInventory(itemData);
             Destroy(gameObject);

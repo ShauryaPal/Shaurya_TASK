@@ -161,5 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a419bcd46dd4bcb93b25480467c75d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 149ce0b84712a4227a98287e40e0dd58, type: 3}
   logPrefab: {fileID: 8036445287158438270, guid: a8ba2e13586204362a15684e12008fdd, type: 3}
   logSpawnPosition: {fileID: 5916654627118237959}

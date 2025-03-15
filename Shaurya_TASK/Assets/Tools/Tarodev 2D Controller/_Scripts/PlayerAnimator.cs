@@ -62,6 +62,11 @@ namespace TarodevController
         private void Update()
         {
             if (_player == null || isPlayingUnskippableAnimation) return;
+            if (DataReferences.Instance.dialogueSystem_UIManager.isShowingDialogue)
+            {
+                _animator.Play(IdleKey);
+                return;
+            }
 
             DetectGroundColor();
 
@@ -161,7 +166,7 @@ namespace TarodevController
 
             yield return new WaitForSeconds(0.1f);
             
-            while (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1 || _animator.IsInTransition(0))
+            while (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
                 yield return null;
 
             isPlayingUnskippableAnimation = false;
@@ -174,5 +179,6 @@ namespace TarodevController
         private static readonly int JumpKey = Animator.StringToHash("Jump");
         public static readonly int EatKey = Animator.StringToHash("Eat");
         public static readonly int AttackKey = Animator.StringToHash("Attack");
+        public static readonly int DieKey = Animator.StringToHash("Die");
     }
 }

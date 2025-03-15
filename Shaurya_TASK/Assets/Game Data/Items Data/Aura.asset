@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Aura
   itemSprite: {fileID: -1796461765, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
   itemDescription: Looks something special
-  equippablePrefab: {fileID: -6647354105173151578, guid: f301b9813d0714d228aa34e6012cee91, type: 3}
+  equippablePrefab: {fileID: -1540128746062429882, guid: 5859af0d812464f938554a83bd8f5036, type: 3}

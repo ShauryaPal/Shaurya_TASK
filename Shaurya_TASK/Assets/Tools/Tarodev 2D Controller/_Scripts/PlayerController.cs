@@ -69,7 +69,7 @@ namespace TarodevController
 
         private void FixedUpdate()
         {
-            if (!_animator.isPlayingUnskippableAnimation)
+            if (!_animator.isPlayingUnskippableAnimation && !DataReferences.Instance.dialogueSystem_UIManager.isShowingDialogue)
             {
                 CheckCollisions();
 

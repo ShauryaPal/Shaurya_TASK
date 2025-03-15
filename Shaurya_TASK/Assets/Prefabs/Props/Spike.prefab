@@ -231,4 +231,4 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  damageSmoothingRate: 30
+  damageSmoothingRate: 5

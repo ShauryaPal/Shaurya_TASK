@@ -3,6 +3,7 @@ using UnityEngine;
 public class EquippedItem : MonoBehaviour
 {
     internal ItemData itemData;
+    [SerializeField] private AudioClip sfx;
 
     public void SetupEquippedItem(ItemData itemData)
     {
@@ -11,6 +12,6 @@ public class EquippedItem : MonoBehaviour
     
     public virtual void Use()
     {
-        
+        DataReferences.Instance.soundManager.PlaySfx(sfx);
     }
 }
